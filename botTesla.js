@@ -428,7 +428,7 @@ bot.start(async (ctx) => {
         reply_markup:{
             inline_keyboard:[
                 [{text:'Botu Qrupa Əlavə Edin ✅', url:`https://t.me/${process.env.BOT_ISMI}?startgroup=true`}],
-                [{text:'Rəsmi Kanalımız 📣', url:`t.me/Rahid_44`},{text:'Qruplar 💎', callback_data:'vip'}]
+                [{text:'Söhbət Qrupumuz 💬', url:`t.me/CrazyTeam_s`},{text:'Rəsmi 💎', callback_data:'vip'}]
             ]
         }
     })
@@ -441,7 +441,7 @@ bot.action('start', ctx=>{
         reply_markup:{
             inline_keyboard:[
                 [{text:'Botu Qrupa Əlavə Edin ✅', url:`t.me/${process.env.BOT_ISMI}?startgroup=true`}],
-                [{text:'Rəsmi Kanalımız 📣', url:`t.me/Rahid_44`},{text:'Qruplar 💎', callback_data:'vip'}]
+                [{text:'Rəsmi Kanalımız 📣', url:`t.me/crazy_resmi`},{text:'Rəsmi 💎', callback_data:'vip'}]
             ]
         }
     })
@@ -451,11 +451,11 @@ bot.action('start', ctx=>{
 
 bot.action('vip', ctx=>{
     ctx.deleteMessage()
-    ctx.replyWithMarkdown(`*🇦🇿 Qruplar*`,{
+    ctx.replyWithMarkdown(`*🇦🇿 Rəsmi*`,{
         reply_markup:{
             inline_keyboard:[
                 [{text:'🇦🇿 Qruplar', callback_data:'AZ'}],
-                [{text:'🇦🇿 Digər Qruplar', callback_data:'TR'}],
+                [{text:'🇦🇿 Kanallar', callback_data:'TR'}],
                 [{text:'🔙 Geri', callback_data:'start'}]
             ]
         }
@@ -468,8 +468,8 @@ bot.action('AZ', ctx=>{
     ctx.replyWithMarkdown(`*🇦🇿 Qruplar*`,{
         reply_markup:{
             inline_keyboard:[
-                [{text:'1) Qrup ', url:'t.me/Gencler_Mekani'}],
-                [{text:'2) Qrup ', url:'t.me/GG_teams'}],
+                [{text:'1) Qrup ', url:'t.me/CrazyTeam_s'}],
+                [{text:'2) Qrup ', url:'t.me/Crazysup'}],
                 [{text:'🔙 Geri', callback_data:'vip'}]
             ]
         }
@@ -480,12 +480,12 @@ bot.action('AZ', ctx=>{
 bot.action('TR', ctx=>{
     ctx.deleteMessage()
     ctx.replyWithMarkdown(`
-*🇦🇿 Digər Qruplar*
+*🇦🇿 Kanallar*
        `,{
         reply_markup:{
             inline_keyboard:[
-                [{text:'1) Qrup', url:'t.me/BanditosQrup'}],
-                [{text:'2) Qrup', url:'t.me/gecepayizi'}],
+                [{text:'1) Qrup', url:'t.me/Crazymmc'}],
+                [{text:'2) Qrup', url:'t.me/crazy_resmi'}],
                 [{text:'🔙 Geri', callback_data:'vip'}]
             ]
         }
