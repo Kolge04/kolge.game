@@ -268,7 +268,7 @@ const OyunHusnuEhedov = (ctx, chatId) => {
 
 
 
-bot.command("game", (ctx) => {
+bot.command("oyun", (ctx) => {
 	let message = ctx.update.message
 	if (message.chat.id < 0) {
 		let chatId = message.chat.id
@@ -299,7 +299,7 @@ bot.command("game", (ctx) => {
 
 
 
-bot.command("stop", (ctx) => {
+bot.command("son", (ctx) => {
     let message = ctx.update.message
     if (message.chat.id < 0) {
         let chatId = message.chat.id
@@ -313,7 +313,7 @@ bot.command("stop", (ctx) => {
 
 /// /// /// /// /// /// ///  <!-- GRUB KULLANICI RATING --> /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// 
 
-bot.command("top", (ctx) => {
+bot.command("puan", (ctx) => {
 	let message = ctx.update.message
 	if (message.chat.id < 0) {
 		let chatId = message.chat.id
@@ -358,7 +358,7 @@ ${top.sort((a, b) => b.score - a.score).slice(0, 20).map((member, index) => `${[
 
 
 /// /// /// /// /// /// ///  <!-- GLOBAL KULLANICI RATING --> /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// 
-bot.command("g", (ctx) => {
+bot.command("gpuan", (ctx) => {
     fs.readFile(dbfile, 'utf8', async function(err, doc) {
         var comments = doc.match(/-100\d+/g)
         let top = []
@@ -392,13 +392,13 @@ ${(top).sort((a, b) => b.score - a.score).slice(0, 20).map((member, index) => `$
 
 
 
-bot.command("help", (ctx) => {
+bot.command("yardım", (ctx) => {
     return ctx.replyWithMarkdown(Degisken(`
         *Salam 👋. Mən  "Təxmin"  Oyunu Üçün\nYaradılmış Bir Botam 🤖*\nℹ *Bot Yalnız Qruplar Üçün Nəzərdə Tutulub!*\n\n_ℹ️ Qaydalar Budur : Mən Sizə Şəkillər Atıram Və Siz Kateqoriyaya Uyğun Rəqəmlər Təxmin Etməlisiniz\n🕵🏼‍♂️ Əvvəlcə Botu Qrupa Əlavə Edin Və Qrupda Media İcazəni Aktiv Edin Və Ya Botu Admin Edin_\n🗣 _Sonra Əmrlər İlə Tanış Olub Oyuna Başlaya Bilərsiniz_ 🎯\n
           *Əsas Əmrlərin Siyahısı👇🏻*\n\n🎲 /game - _Oyunu Başladar_\n⛔️ /stop - _Oyunu Dayandırar_\n📊 /top - _Oyunçuların Xalların Göstərir_\n_🌍 /g - Global Xallar_\nℹ️ /help - _Yardım Meynusu_\n👤 /info - _İstifadəçi Haqqında Məlumat_\n🆔 /id - _Qrup Məlumatı_`))
 })
 
-bot.command("info", async (ctx) => {
+bot.command("melumat", async (ctx) => {
     const Id = ctx.message.reply_to_message ? ctx.message.reply_to_message.from.id : ctx.message.from.id;
     const messageId = ctx.message.reply_to_message ? ctx.message.reply_to_message.message_id : null;
     const photoInfo = await ctx.telegram.getUserProfilePhotos(Id);
