@@ -392,7 +392,7 @@ ${(top).sort((a, b) => b.score - a.score).slice(0, 20).map((member, index) => `$
 
 
 
-bot.command("help", (ctx) => {
+bot.command("helps", (ctx) => {
     return ctx.replyWithMarkdown(Degisken(`
         *Salam 👋. Mən  "Təxmin"  Oyunu Üçün\nYaradılmış Bir Botam 🤖*\nℹ *Bot Yalnız Qruplar Üçün Nəzərdə Tutulub!*\n\n_ℹ️ Qaydalar Budur : Mən Sizə Şəkillər Atıram Və Siz Kateqoriyaya Uyğun Rəqəmlər Təxmin Etməlisiniz\n🕵🏼‍♂️ Əvvəlcə Botu Qrupa Əlavə Edin Və Qrupda Media İcazəni Aktiv Edin Və Ya Botu Admin Edin_\n🗣 _Sonra Əmrlər İlə Tanış Olub Oyuna Başlaya Bilərsiniz_ 🎯\n
           *Əsas Əmrlərin Siyahısı👇🏻*\n\n🎲 /games - _Oyunu Başladar_\n⛔️ /stops - _Oyunu Dayandırar_\n📊 /tops - _Oyunçuların Xalların Göstərir_\n_🌍 /g - Global Xallar_\nℹ️ /helps - _Yardım Meynusu_\n👤 /infos - _İstifadəçi Haqqında Məlumat_\n🆔 /ids - _Qrup Məlumatı_\n\nℹ Əmrlərin Sonuna s Yqzmağı unutmayın\nSəbəb:-Bəzi Bot Əmrləri Eyni Olduğu Üçün`))
