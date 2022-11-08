@@ -76,7 +76,7 @@ const OyunYaratHusnuEhedov = chatId => {
 
 const ozelMesaj = isGroup => Degisken(`
     *Salam 👋, 𝐊 Ö 𝐋 𝐆 Ə _ 𝐆 𝐀 𝐌 𝐄 𝐗 Oyun Botuyam 🤖.\n⏳ Zamanınızı Əyləncəli Və Səmərəli Keçirmək Üçün Məni Qrupuna Əlavə Edə Bilərsən! ✅*
-    ${isGroup ? "" : "\n*👮‍♂️ Əsas Əmrlərlə Tanış Olmaq Üçün\n🔹️ /help Əmrindən İadifadə Edin*"}
+    ${isGroup ? "" : "\n*👮‍♂️ Əsas Əmrlərlə Tanış Olmaq Üçün\n🔹️ /helps Əmrindən İadifadə Edin*"}
 `)
 
 
@@ -149,7 +149,7 @@ const OyunDurdurHusnuEhedov = (ctx, chatId) => {
 		}
 	}
 	else {
-		ctx.reply("❌ Oyun Başlamadı..\nOyunu Başlat ➡️  /game")
+		ctx.reply("❌ Oyun Başlamadı..\nOyunu Başlat ➡️  /games")
 	}
 }
 const RaundMesajHusnuEhedov = (chatId, round, time) => {
@@ -240,7 +240,7 @@ const OyunHusnuEhedov = (ctx, chatId) => {
 				)
 			}
 			else {
-				ctx.reply("❌ Cavab Yoxdur\n✅ Oyun Dayandırıldı❕")
+				ctx.reply("❌ Cavab Yoxdur\n✅ Oyun Sonlandırıldı❕")
 				OyunDurdurHusnuEhedov(ctx, chatId)
 				return
 			}
