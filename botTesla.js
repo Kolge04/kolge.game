@@ -482,7 +482,7 @@ bot.action('AZ', ctx=>{
 bot.action('TR', ctx=>{
     ctx.deleteMessage()
     ctx.replyWithMarkdown(`
-*  *
+*🇦🇿 𝐎 𝐖 𝐍 𝐄 𝐑 👨‍💻*
        `,{
         reply_markup:{
             inline_keyboard:[
