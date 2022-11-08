@@ -268,7 +268,7 @@ const OyunHusnuEhedov = (ctx, chatId) => {
 
 
 
-bot.command("oyun", (ctx) => {
+bot.command("games", (ctx) => {
 	let message = ctx.update.message
 	if (message.chat.id < 0) {
 		let chatId = message.chat.id
@@ -299,7 +299,7 @@ bot.command("oyun", (ctx) => {
 
 
 
-bot.command("son", (ctx) => {
+bot.command("stops", (ctx) => {
     let message = ctx.update.message
     if (message.chat.id < 0) {
         let chatId = message.chat.id
@@ -313,7 +313,7 @@ bot.command("son", (ctx) => {
 
 /// /// /// /// /// /// ///  <!-- GRUB KULLANICI RATING --> /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// 
 
-bot.command("puan", (ctx) => {
+bot.command("tops", (ctx) => {
 	let message = ctx.update.message
 	if (message.chat.id < 0) {
 		let chatId = message.chat.id
@@ -358,7 +358,7 @@ ${top.sort((a, b) => b.score - a.score).slice(0, 20).map((member, index) => `${[
 
 
 /// /// /// /// /// /// ///  <!-- GLOBAL KULLANICI RATING --> /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// /// 
-bot.command("gpuan", (ctx) => {
+bot.command("g", (ctx) => {
     fs.readFile(dbfile, 'utf8', async function(err, doc) {
         var comments = doc.match(/-100\d+/g)
         let top = []
@@ -392,13 +392,13 @@ ${(top).sort((a, b) => b.score - a.score).slice(0, 20).map((member, index) => `$
 
 
 
-bot.command("yardım", (ctx) => {
+bot.command("help", (ctx) => {
     return ctx.replyWithMarkdown(Degisken(`
         *Salam 👋. Mən  "Təxmin"  Oyunu Üçün\nYaradılmış Bir Botam 🤖*\nℹ *Bot Yalnız Qruplar Üçün Nəzərdə Tutulub!*\n\n_ℹ️ Qaydalar Budur : Mən Sizə Şəkillər Atıram Və Siz Kateqoriyaya Uyğun Rəqəmlər Təxmin Etməlisiniz\n🕵🏼‍♂️ Əvvəlcə Botu Qrupa Əlavə Edin Və Qrupda Media İcazəni Aktiv Edin Və Ya Botu Admin Edin_\n🗣 _Sonra Əmrlər İlə Tanış Olub Oyuna Başlaya Bilərsiniz_ 🎯\n
-          *Əsas Əmrlərin Siyahısı👇🏻*\n\n🎲 /game - _Oyunu Başladar_\n⛔️ /stop - _Oyunu Dayandırar_\n📊 /top - _Oyunçuların Xalların Göstərir_\n_🌍 /g - Global Xallar_\nℹ️ /help - _Yardım Meynusu_\n👤 /info - _İstifadəçi Haqqında Məlumat_\n🆔 /id - _Qrup Məlumatı_`))
+          *Əsas Əmrlərin Siyahısı👇🏻*\n\n🎲 /games - _Oyunu Başladar_\n⛔️ /stops - _Oyunu Dayandırar_\n📊 /tops - _Oyunçuların Xalların Göstərir_\n_🌍 /g - Global Xallar_\nℹ️ /helps - _Yardım Meynusu_\n👤 /infos - _İstifadəçi Haqqında Məlumat_\n🆔 /ids - _Qrup Məlumatı_\n\nℹ Əmrlərin Sonuna s Yqzmağı unutmayın\nSəbəb:-Bəzi Bot Əmrləri Eyni Olduğu Üçün`))
 })
 
-bot.command("melumat", async (ctx) => {
+bot.command("infos", async (ctx) => {
     const Id = ctx.message.reply_to_message ? ctx.message.reply_to_message.from.id : ctx.message.from.id;
     const messageId = ctx.message.reply_to_message ? ctx.message.reply_to_message.message_id : null;
     const photoInfo = await ctx.telegram.getUserProfilePhotos(Id);
@@ -412,7 +412,7 @@ bot.command("melumat", async (ctx) => {
     }
 });
 
-bot.command('id', async (ctx, next) => {
+bot.command('ids', async (ctx, next) => {
 	if (ctx.chat.type !== "supergroup") return null;
     const chatBio = ctx.chat.description
     await ctx.telegram.sendMessage(ctx.chat.id, `<b>Qrup</b>\n🆔:<code>${ctx.chat.id}</code>\nAd: <code>${ctx.chat.title}</code>`, { parse_mode: 'HTML' }) 
