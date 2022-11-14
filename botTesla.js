@@ -470,8 +470,8 @@ bot.action('AZ', ctx=>{
     ctx.replyWithMarkdown(`*𝐁 𝐎 𝐓 𝐔 𝐌 🤖*`,{
         reply_markup:{
             inline_keyboard:[
-                [{text:'𝐊 𝐎 𝐋 𝐆 Ə _ 𝐌 𝐏 3 🎧 ', url:'t.me/Kolgempbot'}],
-                [{text:'𝐊 𝐎 𝐋 𝐆 Ə_𝐓 𝐀 𝐆 𝐆 𝐄 𝐑 ', url:'t.me/kolgetaggerbot'}],
+                [{text:'🤖 𝐁 𝐎 𝐓 𝐋 𝐀 𝐑 𝐈 𝐌 〽️', url:'t.me/menimbotlarim'}],
+
                 [{text:'🔙 Geri', callback_data:'vip'}]
             ]
         }
